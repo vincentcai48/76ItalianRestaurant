@@ -2,6 +2,10 @@ const express = require('express');
 const path = require('path')
 const app = express();
 const router = require('./router')
+/*For react apps
+if (process.env.NODE_ENV==='production'){
+    app.use(express.static(path.join(__dirname,"client")))
+}*/
 
 app.use(express.static(path.join(__dirname,'client')))
 app.use('/api',router)
